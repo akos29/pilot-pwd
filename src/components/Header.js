@@ -1,15 +1,6 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-
-const Header = ({ title }) => (
-  <View style={styles.header}>
-    <Text style={styles.text}>{title}</Text>
-  </View>
-);
-
-Header.defaultProps = {
-  title: 'Shopping List',
-};
 
 const styles = StyleSheet.create({
   header: {
@@ -23,5 +14,15 @@ const styles = StyleSheet.create({
     textAlign: 'center',
   },
 });
+
+const Header = ({ title }) => (
+  <View style={styles.header}>
+    <Text style={styles.text}>{title}</Text>
+  </View>
+);
+
+Header.defaultProps = {
+  title: 'Shopping List',
+};
 
 export default Header;

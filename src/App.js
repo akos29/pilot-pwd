@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import {
   View, StyleSheet, FlatList, Alert,
@@ -7,6 +9,12 @@ import { v4 as uuid } from 'uuid';
 import Header from './components/Header';
 import ListItem from './components/ListItem';
 import AddItem from './components/AddItem';
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+});
 
 const App = () => {
   const [items, setItems] = useState([
@@ -44,7 +52,7 @@ const App = () => {
   };
 
   // Submit the users edits to the overall items state
-  const saveEditItem = (id, text) => {
+  const saveEditItem = (id) => {
     setItems((prevItems) => prevItems.map((item) => (item.id === editItemDetail.id ? { id, text: editItemDetail.text } : item)));
     // Flip edit status back to false
     editStatusChange(!editStatus);
@@ -84,11 +92,7 @@ const App = () => {
 
   const itemChecked = (id, text) => {
     const isChecked = checkedItems.filter((checkedItem) => checkedItem.id === id);
-    isChecked.length
-      ? // remove item from checked items state (uncheck)
-      checkedItemChange((prevItems) => [...prevItems.filter((item) => item.id !== id)])
-      : // Add item to checked items state
-      checkedItemChange((prevItems) => [...prevItems.filter((item) => item.id !== id), { id, text }]);
+    isChecked.length ? checkedItemChange((prevItems) => [...prevItems.filter((item) => item.id !== id)]) : checkedItemChange((prevItems) => [...prevItems.filter((item) => item.id !== id), { id, text }]);
   };
 
   return (
@@ -114,11 +118,5 @@ const App = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
 
 export default App;
