@@ -20,7 +20,7 @@ const ListItem = ({
   checkedItems,
 }) => {
   const checked = checkedItems.filter(
-    checkedItem => checkedItem.id === item.id,
+    (checkedItem) => checkedItem.id === item.id,
   );
   return (
     <TouchableOpacity style={styles.listItem}>
@@ -36,7 +36,8 @@ const ListItem = ({
             onPress={() => itemChecked(item.id, item.text)}
             style={
               checked.length ? styles.checkedItemText : styles.listItemText
-            }>
+            }
+          >
             {item.text}
           </Text>
         )}
