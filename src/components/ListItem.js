@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import { FaTrash, FaSave, FaEdit } from 'react-icons/fa';
 
 const styles = StyleSheet.create({
   listItem: {
@@ -75,7 +75,7 @@ const ListItem = ({
         )}
         <View style={styles.iconView}>
           {isEditing && editItemDetail.id === item.id ? (
-            <Icon
+            <FaSave
               name="save"
               size={20}
               color="green"
@@ -83,7 +83,7 @@ const ListItem = ({
             />
           ) : (
             !checked.length && (
-              <Icon
+              <FaEdit
                 name="pencil"
                 size={20}
                 color="blue"
@@ -91,7 +91,7 @@ const ListItem = ({
               />
             )
           )}
-          <Icon
+          <FaTrash
             name="remove"
             size={20}
             color="firebrick"

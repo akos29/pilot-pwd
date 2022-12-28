@@ -45,7 +45,6 @@ const HomeScreen = () => {
 
   return (
   <View>
-    <AddFood addFood={addFood}/>
     <SearchScreen />
   </View>
   );    

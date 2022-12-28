@@ -6,13 +6,14 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/dist/FontAwesome';
+import { FaPlusCircle } from 'react-icons/fa';
 
 const styles = StyleSheet.create({
   input: {
     height: 60,
     padding: 8,
     margin: 5,
+    fontSize: '1.27em',
   },
   btn: {
     backgroundColor: '#c2bad8',
@@ -21,8 +22,10 @@ const styles = StyleSheet.create({
   },
   btnText: {
     color: 'darkslateblue',
-    fontSize: 20,
+    fontSize: 27,
     textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
   },
 });
 
@@ -47,7 +50,7 @@ const AddItem = ({ addItem }) => {
         }}
       >
         <Text style={styles.btnText}>
-          <Icon name="plus" size={20} />
+          <FaPlusCircle name="plus" size={27} style={{ alignItems: 'center', padding: '.5rem' }} />
           Add Item
         </Text>
       </TouchableOpacity>

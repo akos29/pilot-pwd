@@ -4,14 +4,17 @@ import { View, Text, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   header: {
-    height: 60,
     padding: 15,
     backgroundColor: 'darkslateblue',
   },
   text: {
     color: 'white',
-    fontSize: 23,
+    fontSize: 27,
+    padding: 35,
     textAlign: 'center',
+    display: 'flex',
+    alignContent: 'center',
+    justifyContent: 'center',
   },
 });
 
@@ -22,7 +25,7 @@ const Header = ({ title }) => (
 );
 
 Header.defaultProps = {
-  title: 'Shopping List',
+  title: 'Swazi Eats',
 };
 
 export default Header;

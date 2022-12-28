@@ -23,10 +23,13 @@ const styles = StyleSheet.create({
     fontSize: 30,
   },
   backgroundStyle: {
+    marginTop:10,
     backgroundColor: '#f0eeee',
     height:50,
+    borderRadius: 5,
     flexDirection: 'row',
     marginHorizontal: 15,
+    marginBottom: 10
   },
   inputStyle: {
     fontSize:18,
