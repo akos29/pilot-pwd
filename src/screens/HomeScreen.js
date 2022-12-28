@@ -1,9 +1,7 @@
-import React, {useState} from "react";
-import { View, Text, StyleSheet } from "react-native";
-import AddFood from "../components/AddFood";
+import React, { useState } from 'react';
+import { View, Alert } from 'react-native';
 // import SearchBar from "../components/SearchBar";
-import SearchScreen from "./SearchScreen";
-
+import SearchScreen from './SearchScreen';
 
 const HomeScreen = () => {
   const [foods, setFoods] = useState([
@@ -39,21 +37,17 @@ const HomeScreen = () => {
         { cancelable: true },
       );
     } else {
-      setFoods((prevItems) => [{ id: foods.length+1, text }, ...prevItems]);
+      setFoods((prevItems) => [{ id: foods.length + 1, text }, ...prevItems]);
     }
   };
 
-  return (
-  <View>
-    <SearchScreen />
-  </View>
-  );    
-};
+  addFood('lunch');
 
-const styles = StyleSheet.create({
-  text: {
-    fontSize: 30,
-  },
-});
+  return (
+    <View>
+      <SearchScreen />
+    </View>
+  );
+};
 
 export default HomeScreen;
