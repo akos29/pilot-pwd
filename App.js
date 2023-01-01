@@ -1,9 +1,8 @@
-import { createAppContainer } from "react-navigation";
-import { createStackNavigator } from "react-navigation-stack";
-import FoodDisplay from "./src/screens/FoodDisplay";
-import HomeScreen from "./src/screens/HomeScreen";
-import SearchScreen from "./src/screens/SearchScreen";
-import ResultsShowDisplay from "./src/screens/ResultsShowScreen";
+import { createAppContainer } from 'react-navigation';
+import { createStackNavigator } from 'react-navigation-stack';
+import FoodDisplay from './src/screens/FoodDisplay';
+import SearchScreen from './src/screens/SearchScreen';
+import ResultsShowDisplay from './src/screens/ResultsShowScreen';
 
 const navigator = createStackNavigator(
   {
@@ -12,11 +11,11 @@ const navigator = createStackNavigator(
     ResultShow: ResultsShowDisplay,
   },
   {
-    initialRouteName: "Home",
+    initialRouteName: 'Home',
     defaultNavigationOptions: {
-      title: "Swazi Eats",
+      title: 'Swazi Eats',
     },
-  }
+  },
 );
 
 export default createAppContainer(navigator);

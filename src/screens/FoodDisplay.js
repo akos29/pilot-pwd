@@ -1,5 +1,6 @@
-import React from "react";
-import {View, Text, StyleSheet } from "react-native";
+/* eslint-disable react/prop-types */
+import React from 'react';
+import { View, Text, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   header: {
@@ -17,13 +18,11 @@ const styles = StyleSheet.create({
   },
 });
 
-const FoodDisplay = ({title}) => {
-  return (
-  <View style={styles.header}> 
+const FoodDisplay = ({ title }) => (
+  <View style={styles.header}>
     <Text style={styles.text}>{title}</Text>
   </View>
-  );    
-};
+);
 
 FoodDisplay.defaultProps = {
   title: 'Swazi Eats',
